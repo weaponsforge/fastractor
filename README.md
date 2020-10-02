@@ -66,7 +66,7 @@ The following dependencies must first be installed and configured before proceed
 
 1. Download the latest hdf5 source code for UNIX from the official [hdf5 downloads](https://www.hdfgroup.org/downloads/hdf5/source-code/) website. **hdf5-1.12.0.tar.gz** was used for this project.  
 	- `wget https://hdf-wordpress-1.s3.amazonaws.com/wp-content/uploads/manual/HDF5/HDF5_1_12_0/source/hdf5-1.12.0.tar.gz`
-2. Build and install hdf5 to `/usr/local/hdf5`.
+2. Build and install hdf5 to `/usr/local/hdf5`.  
 
 		$tar -zxvf hdf5-1.12.0.tar.gz
 		$cd hdf5-1.12.0
@@ -76,7 +76,10 @@ The following dependencies must first be installed and configured before proceed
 		$sudo make install
 		$sudo make check-install # verify installation.
 
-	> **INFO:** If you want to change hdf5's installation directory, use a different path in `./configure --prefix=<path_to_new_hdf5_directory>`
+	> **INFO:**
+	> 
+	> - If you want to change hdf5's installation directory, use a different path in `./configure --prefix=<path_to_new_hdf5_directory>`.
+	> - A different installation directory should be specified from the extracted `/hdf5-1.12.0` directory.
 3. Verify the hdf5 installation.
 	- Check if a `/usr/local/hdf5`directory exists (for default installation)
 	- Check if you your custom hdf5 directory exists, if you specified a different installation location in `./configure --prefix`
