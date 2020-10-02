@@ -79,7 +79,7 @@ The following dependencies must first be installed and configured before proceed
 	> **INFO:**
 	> 
 	> - If you want to change hdf5's installation directory, use a different path in `./configure --prefix=<path_to_new_hdf5_directory>`.
-	> - A different installation directory should be specified from the extracted `/hdf5-1.12.0` directory.
+	> - The custom installation directory should be different from the extracted `/hdf5-1.12.0` directory.
 3. Verify the hdf5 installation.
 	- Check if a `/usr/local/hdf5`directory exists (for default installation)
 	- Check if you your custom hdf5 directory exists, if you specified a different installation location in `./configure --prefix`
