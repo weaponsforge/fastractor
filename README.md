@@ -77,13 +77,17 @@ The following dependencies must first be installed and configured before proceed
 		$sudo make check-install # verify installation.
 
 	> **INFO:** If you want to change hdf5's installation directory, use a different path in `./configure --prefix=<path_to_new_hdf5_directory>`
+3. Verify the hdf5 installation.
+	- Check if a `/usr/local/hdf5`directory exists (for default installation)
+	- Check if you your custom hdf5 directory exists, if you specified a different installation location in `./configure --prefix`
+	- Re-check your installation process if the hdf5 installation directory doesn't exist by this point
 3. Add the installed hdf5 lib to `/etc/ld.so.conf`
 	- `sudo nano /etc/ld.so.conf`
 	- Add the installed hdf5 lib path at the end of the line and save.  
 
 			include ld.so.conf.d/*.conf
 			/usr/local/hdf5/lib/
-		> **INFO:** The sample code uses hdf5's **default installation** directory. Type your custom hdf5 installation directory, if you specified a different location during installation.
+		> **INFO:** The sample code uses hdf5's **default installation** directory. Encode your custom hdf5 installation directory, if you specified a different location during installation.
 	- Run `sudo ldconfig`
 
 
