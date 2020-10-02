@@ -66,7 +66,7 @@ The following dependencies must first be installed and configured before proceed
 
 1. Download the latest hdf5 source code for UNIX from the official [hdf5 downloads](https://www.hdfgroup.org/downloads/hdf5/source-code/) website. **hdf5-1.12.0.tar.gz** was used for this project.  
 	- `wget https://hdf-wordpress-1.s3.amazonaws.com/wp-content/uploads/manual/HDF5/HDF5_1_12_0/source/hdf5-1.12.0.tar.gz`
-2. Build and install hdf5.
+2. Build and install hdf5 to `/usr/local/hdf5`.
 
 		$tar -zxvf hdf5-1.12.0.tar.gz
 		$cd hdf5-1.12.0
@@ -75,14 +75,14 @@ The following dependencies must first be installed and configured before proceed
 		$make check # run test suite.
 		$sudo make install
 		$sudo make check-install # verify installation.
+
+	> **INFO:** If you want to change hdf5's installation directory, use a different path in `./configure --prefix=<path_to_new_hdf5_directory>`
 3. Add the installed hdf5 lib to `/etc/ld.so.conf`
 	- `sudo nano /etc/ld.so.conf`
-	- Add the hdf5 lib path at the end of the line and save.  
+	- Add the installed hdf5 lib path at the end of the line and save. *(The sample code follows hdf5's **default installation** directory)*.  
 
 			include ld.so.conf.d/*.conf
 			/usr/local/hdf5/lib/
-
-		> **INFO:** the installed hdf5 lib should correspond to the `--prefix` path used in hdf5's `./configure` command.
 	- Run `sudo ldconfig`
 
 
@@ -96,7 +96,12 @@ The following dependencies must first be installed and configured before proceed
 	- `git clone https://github.com/thegenemyers/DEXTRACTOR.git`
 2. Update the `dex2DB.c` source code with reference to Issue [[#26]](https://github.com/thegenemyers/DEXTRACTOR/issues/26).
 	- Replace all occurrences of `DB_CSS` to `DB_CCS` in line `#650` and `#846`.
-3. Navigate to the `/DEXTRACTOR` directory from the command line.
+3. (Optional) Adjust **hdf5**'s `PATH_HDF5` variable in the `Makefile` if you specified a different **hdf5** installation location on `./configure --prefix`. The default installation location is `/usr/local/hdf5`.
+	- Open the `Makefile`  
+`nano Makefile`
+	- Update the **PATH_HDF5** variable on line #2 with your custom hdf5 installation directory, i.e.:  
+`PATH_HDF5 = /home/adminuser/hdf5`
+4. Navigate to the `/DEXTRACTOR` directory from the command line.
 	- Run `make`
 
 
