@@ -82,7 +82,7 @@ The following dependencies must first be installed and configured before proceed
 			include ld.so.conf.d/*.conf
 			/usr/local/hdf5/lib/
 
-		> **INFO:** the installed hdf5 lib shoud correspond to the `--prefix` path used in hdf5's `./configure` command.
+		> **INFO:** the installed hdf5 lib should correspond to the `--prefix` path used in hdf5's `./configure` command.
 	- Run `sudo ldconfig`
 
 
