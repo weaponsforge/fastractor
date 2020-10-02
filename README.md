@@ -68,19 +68,21 @@ The following dependencies must first be installed and configured before proceed
 	- `wget https://hdf-wordpress-1.s3.amazonaws.com/wp-content/uploads/manual/HDF5/HDF5_1_12_0/source/hdf5-1.12.0.tar.gz`
 2. Build and install hdf5.
 
-		$gunzip < hdf5-1.12.0.tar.gz | tar xf -
-		$cd hdf5-1.12.0`
+		$tar -zxvf hdf5-1.12.0.tar.gz
+		$cd hdf5-1.12.0
 		$./configure --prefix=/usr/local/hdf5
 		$make
 		$make check # run test suite.
 		$sudo make install
 		$sudo make check-install # verify installation.
-3. Add the hdf5 lib to `/etc/ld.so.conf`.
-	- `sudo nano /etc/ld.so.conf`
+3. Add the installed hdf5 lib to `/etc/ld.so.conf`.
+	- `sudo nano /etc/ld.so.conf.d`
 	- Add the hdf5 lib path at the end of the line and save.  
 
 			include ld.so.conf.d/*.conf
 			/usr/local/hdf5/lib/
+
+		> **INFO:** the installed hdf5 lib shoud correspond to the `--prefix` path used in hdf5's `./configure` command.
 	- Run `sudo ldconfig`
 
 
