@@ -75,8 +75,8 @@ The following dependencies must first be installed and configured before proceed
 		$make check # run test suite.
 		$sudo make install
 		$sudo make check-install # verify installation.
-3. Add the installed hdf5 lib to `/etc/ld.so.conf.d`.
-	- `sudo nano /etc/ld.so.conf.d`
+3. Add the installed hdf5 lib to `/etc/ld.so.conf`
+	- `sudo nano /etc/ld.so.conf`
 	- Add the hdf5 lib path at the end of the line and save.  
 
 			include ld.so.conf.d/*.conf
