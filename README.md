@@ -80,7 +80,7 @@ The following dependencies must first be installed and configured before proceed
 `nano Makefile`
 	- Update the **PATH_HDF5** variable on line #2 with your custom hdf5 installation directory, i.e.:  
 `PATH_HDF5 = /home/adminuser/hdf5-1.12.0-linux-centos7-x86_64-shared`
-4. Navigate to the `/DEXTRACTOR` directory from the command line.
+4. Navigate to the `/dextractor` directory from the terminal.
 	- Run `make`
 5. For convenience, permanently make dextractor globally accessible anywhere from the terminal. Use the full path where dextractor's binaries are built, for example in **/home/adminuser/dextractor**: 
 
