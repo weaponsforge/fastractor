@@ -3,7 +3,7 @@
 > Aims to extract `.fasta` data using [DEXTRACTOR](https://github.com/thegenemyers/DEXTRACTOR) from a series of local (3) `.bax.h5` files and (1) `.bas.h5` file.  
 
 - This guide uses a pre-built [hdf5 binary distribution](https://www.hdfgroup.org/downloads/hdf5/) for linux.  
-- To use hdf5 [built from source code](https://github.com/weaponsforge/fastractor/wiki/Dextractor:-Build-HDF5-from-Source-Code), refer to the previous installation guide for more information.
+- To use hdf5 **built from source code**, refer to the [previous installation](https://github.com/weaponsforge/fastractor/wiki/Dextractor:-Build-HDF5-from-Source-Code) guide for more information.
 
 ## Content
 
